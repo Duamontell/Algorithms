@@ -29,11 +29,6 @@ void CreateGraph(std::ifstream& file, std::vector<std::vector<Edge>>& graph) {
 		int startVertex, endVertex, weight;
 
 		if (iss >> startVertex >> endVertex >> weight) {
-			/*if (startVertex > endVertex) {
-				swap = endVertex;
-				endVertex = startVertex;
-				startVertex = swap;
-			}*/
 			Edge edge{ startVertex, endVertex, weight };
 
 			if (startVertex >= graph.size()) {
@@ -43,10 +38,6 @@ void CreateGraph(std::ifstream& file, std::vector<std::vector<Edge>>& graph) {
 			graph[startVertex].push_back(edge);
 		}
 	}
-
-	/*int levelUp = graph.size();
-	graph.resize(levelUp + 1);
-	graph[levelUp].push_back({ levelUp, 0, 0 });*/
 }
 
 void ReadFile(std::vector<std::vector<Edge>>& graph) {
@@ -77,7 +68,6 @@ void PrintTableTop(std::vector<std::vector<Edge>>& graph) {
 	std::cout << "  Edge  |  Sum  \n";
 }
 
-// 3
 void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<bool>& inPrimTree, int& num, int& sum, int& x, int& y, int& firstVertex, std::vector<Edge> minEdgeWeight) {
 	if (num > 9) {
 		std::cout << " " << num << "  |";
@@ -143,25 +133,6 @@ void CreatePrimTree() {
 		y = 0;
 		int min = std::numeric_limits<int>::max();
 
-		/*for (int i = 1; i < graph.size() - 1; ++i) {
-			if (inPrimTree[i]) {
-				for (int j = 0; j < graph[i].size(); ++j) {
-					if (!inPrimTree[graph[i][j].y]) {
-						if (min > graph[i][j].weight) {
-							min = graph[i][j].weight;
-							x = graph[i][j].x;
-							y = graph[i][j].y;
-						}
-
-						if (minEdgeWeight[graph[i][j].y].weight > graph[i][j].weight) {
-							minEdgeWeight[graph[i][j].y] = { i, graph[i][j].y, graph[i][j].weight };
-						}
-					}
-				}
-			}
-
-		}*/
-
 		for (int i = 1; i < graph.size(); ++i) {
 			if (inPrimTree[i]) {
 				for (int j = 0; j < graph[i].size(); ++j) {
@@ -211,20 +182,6 @@ void CreatePrimTree() {
 		std::cout << " " << i << ": " << minEdgeWeight[i].x << " " << minEdgeWeight[i].y << " " << minEdgeWeight[i].weight << "\n";
 	}
 	std::cout << "\n";
-}
-
-// Check graph for debug
-void PrintGraph(std::vector<std::vector<Edge>>& graph) {
-	for (int i = 0; i < graph.size(); ++i) {
-		std::vector<Edge> edges = graph[i];
-		if (!edges.empty()) {
-			for (int j = 0; j < edges.size(); ++j) {
-
-				std::cout << edges[j].x << " " << edges[j].y << " " << edges[j].weight << "\n";
-			}
-		}
-	}
-
 }
 
 void PrintMainMenu() {
