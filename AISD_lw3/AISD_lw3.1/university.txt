@@ -1,0 +1,94 @@
+University
+.Information technology faculty
+..Department of Informatics and Computer Science
+...Artur Stepanovich Alexandrov
+...Artur Stepanovich Alexandrov
+...Volkova Alexandra Ibragimovna
+...Kazan branch
+....Volkova Alexandra Ibragimovna
+...Moscow branch
+....Artur Stepanovich Alexandrov
+...Maxim Artemievich Semyonov
+..Department of Applied Informatics
+...Timofey Makarovich Rybakov
+..Department of Information Security
+...Volkova Alexandra Ibragimovna
+...Artur Stepanovich Alexandrov
+..Department of Artificial Intelligence and Machine Learning
+...Maxim Artemievich Semyonov
+.Economic faculty
+..Department of Theoretical Economics
+...Daniil Ruslanovich Kosarev
+..Department of Applied Economics
+...Volko Alexandra Ibragimovna
+...Vasily Viktorovich Vdovin
+..Department of Statistics and Data Analysis
+...Daniil Ruslanovich Kosarev
+.Philological faculty
+..Department of Foreign Languages
+...Nikitin Dmitry Daniilovich
+..Department of Psychology and Pedagogy
+...Kazan branch
+....Makar Yaroslavovich Zimin
+...Moscow branch
+....Mikhail Daniilovich Pugachev
+.Philosophical faculty
+..Department of Logic
+...Medvedev Anton Andreevich
+...Kazan branch
+....Fedor Alexandrovich Agafonov
+...Moscow branch
+....Maria Ivanovna Alekseeva
+..Department of History of Russian Philosophy
+...Medvedev Anton Andreevich
+...Lyubimov Grigory Sergeevich
+...Kazan branch
+....Fedor Alexandrovich Agafonov
+...Moscow branch
+....Maria Ivanovna Alekseeva
+..Department of Philosophy and Methodology of Science
+...Terekhov Pyotr Timurovich
+...Kazan branch
+....Fedor Alexandrovich Agafonov
+....Abramova Kristina Platonovna
+...Moscow branch
+....Maria Ivanovna Alekseeva
+.Sociology faculty
+..Department of Cultural Anthropology and Ethnic Sociology
+...Valeria Matveyevna Baranova
+...Abramova Kristina Platonovna
+..Department of Sociology of Culture and Communications
+...Madina Sergeevna Titova
+..Department of Economic Sociology
+...Ksenia Bogdanovna Borisova
+..Department of Theory and History of Sociology
+...Ksenia Bogdanovna Borisova
+...Kazan branch
+....Valeria Matveyevna Baranova
+...Moscow branch
+....Alexander Robertovich Sokolov
+..Department of Social Analysis and Mathematical Methods in Sociology
+...Valeria Matveyevna Baranova
+.History faculty
+..Ancient history department
+...Abramova Kristina Platonovna
+...Voronin Stepan Vladimirovich
+..Department of history of the Middle Ages
+...Voronin Stepan Vladimirovich
+..Department of new and modern history
+...Lebedev Artur Glebovich
+.Arts faculty
+..Department of Design
+...Kulikova Polina Egorovna
+..Department of Theater Art
+...Leontiev Savely Emilevich
+..Department of Visual Arts
+...Grigorieva Vasilisa Alekseevna
+.International relations faculty
+..Department of International Humanities
+...Ivanova Amina Olegovna
+..Department of World Politics
+...Pavlov Damir Petrovich
+..Department of Theory and History of International Relations
+...Ostrovskaya Aisha Platonovna
+...Boldyrev Roman Georgievich
