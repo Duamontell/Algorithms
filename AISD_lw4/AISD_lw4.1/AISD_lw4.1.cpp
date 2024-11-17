@@ -77,60 +77,8 @@ void PrintTableTop(std::vector<std::vector<Edge>>& graph) {
 	std::cout << "  Edge  |  Sum  \n";
 }
 
-// 1
-//void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<std::vector<Edge>>& primTree, int& num, int& sum, int& x, int& y, int& firstVertex) {
-//	std::cout << "  " << num << "  |";
-//	for (int i = 0; i < graph.size(); ++i) {
-//		for (int j = 0; j < primTree[i].size(); ++j) {
-//			if (primTree[i][j].x == firstVertex) {
-//				std::cout << "  0  |";
-//			} else {
-//				std::cout << " " << primTree[i][j].weight << "(" << primTree[i][j].x << ")" << "  |";
-//			}
-//		}
-//	}
-//
-//	std::cout << " " << x << "-" << y << " |";
-//	std::cout << "  " << sum << "  \n";
-//}
-
-// 2
-//void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<Edge>& primTree, int& num, int& sum, int& x, int& y, int& firstVertex) {
-//	if (num > 9) {
-//		std::cout << " " << num << "  |";
-//	} else {
-//		std::cout << "  " << num << "  |";
-//	}
-//
-//	for (int i = 1; i < graph.size(); ++i) {
-//		if (i < primTree.size()) {
-//			if (primTree[i - 1].x == firstVertex) {
-//				std::cout << "   0   |";
-//			} else {
-//				std::cout << "  " << primTree[i - 1].weight << "(" << primTree[i - 1].x << ")" << " |";
-//			}
-//		} else if (i == firstVertex) {
-//			std::cout << "   0   |";
-//		} else {
-//			std::cout << "  INF  |";
-//		}
-//	}
-//
-//	if (x == 0 && y == 0) {
-//		std::cout << "    " << "    |";
-//	} else {
-//		std::cout << "   " << x << "-" << y << "  |";
-//	}
-//
-//	if (sum == 0) {
-//		std::cout << "\n";
-//	} else {
-//		std::cout << "   " << sum << "   \n";
-//	}
-//}
-
 // 3
-void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<Edge>& primTree, int& num, int& sum, int& x, int& y, int& firstVertex, std::vector<Edge> minEdgeWeight) {
+void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<bool>& inPrimTree, int& num, int& sum, int& x, int& y, int& firstVertex, std::vector<Edge> minEdgeWeight) {
 	if (num > 9) {
 		std::cout << " " << num << "  |";
 	} else {
@@ -138,19 +86,12 @@ void PrintNextTurn(std::vector<std::vector<Edge>>& graph, std::vector<Edge>& pri
 	}
 
 	for (int i = 1; i < graph.size(); ++i) {
-		if (i + 50 < primTree.size()) {
-			if (primTree[i - 1].x == firstVertex) {
-				std::cout << "   0   |";
-			} else {
-				/*for (int j = 0; j <= primTree.size(); ++j) {
-					if ( x)
-				}*/
-				std::cout << "  " << primTree[i - 2].weight << "(" << primTree[i - 2].x << ")" << " |";
-			}
-		} else if (minEdgeWeight[i].weight == std::numeric_limits<int>::max()) {
+		if (minEdgeWeight[i].weight == std::numeric_limits<int>::max()) {
 			std::cout << "  INF  |";
 		} else if (minEdgeWeight[i].weight == 0) {
 			std::cout << "   0   |";
+		} else  if (inPrimTree[i] == true) {
+			std::cout << " !" << minEdgeWeight[i].weight << "(" << minEdgeWeight[i].x << ")" << " |";
 		} else {
 			std::cout << "  " << minEdgeWeight[i].weight << "(" << minEdgeWeight[i].x << ")" << " |";
 		}
@@ -194,7 +135,7 @@ void CreatePrimTree() {
 
 
 	PrintTableTop(graph);
-	PrintNextTurn(graph, primTree, num, sum, x, y, firstVertex, minEdgeWeight);
+	PrintNextTurn(graph, inPrimTree, num, sum, x, y, firstVertex, minEdgeWeight);
 	num++;
 
 	while (noEdge < graph.size() - 2) {
@@ -255,13 +196,13 @@ void CreatePrimTree() {
 			}
 		}
 
-		PrintNextTurn(graph, primTree, num, check, check, check, firstVertex, minEdgeWeight);
+		PrintNextTurn(graph, inPrimTree, num, check, check, check, firstVertex, minEdgeWeight);
 		num++;
 		primTree.push_back({ x, y, min });
 		sum += min;
-		PrintNextTurn(graph, primTree, num, sum, x, y, firstVertex, minEdgeWeight);
 		inPrimTree[x] = true;
 		inPrimTree[y] = true;
+		PrintNextTurn(graph, inPrimTree, num, sum, x, y, firstVertex, minEdgeWeight);
 		num++;
 		noEdge++;
 	}
